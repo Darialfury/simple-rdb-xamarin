@@ -4,8 +4,15 @@
              xmlns:local="clr-namespace:mrealtime"
              x:Class="mrealtime.MainPage">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <StackLayout>
+        <Button Text="Get!" Clicked="Handle_Cliked"/>
+        <ListView ItemsSource="{Binding .}" x:Name="_lst">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding nombre}" Detail="{Binding apellido}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 
 </ContentPage>
